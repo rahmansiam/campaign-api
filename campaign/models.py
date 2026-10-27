@@ -20,6 +20,7 @@ class Campaign(models.Model):
     click_url = models.URLField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    creative = models.ForeignKey("creative.Creative",on_delete=models.SET_NULL,null=True,blank=True,related_name="campaigns")
 
     class Meta:
         ordering = ["-created_at"]
