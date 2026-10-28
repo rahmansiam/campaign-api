@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('campaign.urls')),
     path('',include('creative.urls')),
+    path("", include("events.urls")),
 ]

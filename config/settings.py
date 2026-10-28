@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'campaign',
     'creative',
+    'events',
     'rest_framework',
     'rest_framework.authtoken',
 ]
