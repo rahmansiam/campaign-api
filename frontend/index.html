@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body style="background-color:aliceblue;">
     <header>
         <h1>Campaign List</h1>
+        <form id="login-form">
+            <input id="username" placeholder="Username" required">
+            <input type="password" id="password" placeholder="Password" required>
+            <button>Log in</button>
+            <span id="auth-status"></span>
+        </form>
     </header>
 
     <main>
@@ -24,9 +30,26 @@
         </section>
     </main>
 
-    <footer>
+    <button id="open-create">Create Campaign</button>
 
-    </footer>
+    <dialog id="create-dialog">
+        <form id="create-form">
+            <input name="name" placeholder="name" required>
+            <input name="budget" type="number" placeholder="Budget" required>
+            <select name="status">
+                <option value="draft">Draft</option>
+                <option value="active">Active</option>
+                <option value="paused">Paused</option>
+                <option value="ended">Ended</option>
+            </select>
+            <select name="creative" id="creative-select"></select>
+            <input type="url" name="creative_url" placeholder="Creative URL" required>
+            <input type="url" name="click_url" placeholder="Click URL" required>
+            <p id="create-error"></p>
+            <button>Save</button>
+            <button type="button" id="cancel-create">Cancel</button>
+        </form>
+    </dialog>
 
 
 
