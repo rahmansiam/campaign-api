@@ -58,6 +58,16 @@ async function showDetail(id) {
         previewBtn.textContent = "Preview Creative";
         previewBtn.disabled = !campaign.creative_detail;
 
+        previewBtn.addEventListener("click", () => {
+        detailEl.querySelector("iframe")?.remove();  
+        const frame = document.createElement("iframe");
+        frame.src = `ad/index.html?campaign=${campaign.id}`;
+        frame.width = 300;
+        frame.height = 400;
+        frame.style.border = "none";
+        detailEl.append(frame);
+        });
+
         detailEl.replaceChildren(title, creative, status, budget, previewBtn);
 
     } catch (error) {
