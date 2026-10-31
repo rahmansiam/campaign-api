@@ -20,8 +20,16 @@ async function loadCampaigns() {
 
         data.forEach((campaign) => {
             const element = document.createElement("li");
-            element.addEventListener("click", () => showDetail(campaign.id))
-            element.textContent = `${campaign.name} - ${campaign.status}`;
+
+            const name = document.createElement("span");
+            name.textContent = campaign.name;
+
+            const badge = document.createElement("span");
+            badge.className = `badge ${campaign.status}`;
+            badge.textContent = campaign.status;
+
+            element.append(name, badge);
+            element.addEventListener("click", () => showDetail(campaign.id));
             campaigns.append(element);
         });
     } catch (error) {
@@ -57,6 +65,17 @@ async function showDetail(id) {
         const previewBtn = document.createElement("button");
         previewBtn.textContent = "Preview Creative";
         previewBtn.disabled = !campaign.creative_detail;
+
+        previewBtn.addEventListener("click", () => {
+            detailEl.querySelector(".preview-stage")?.remove();
+            const stage = document.createElement("div");
+            stage.className = "preview-stage";
+            const frame = document.createElement("iframe");
+            frame.src = `ad/index.html?campaign=${campaign.id}`;
+            frame.title = "Ad preview";
+            stage.append(frame);
+            detailEl.append(stage);
+        });
 
         detailEl.replaceChildren(title, creative, status, budget, previewBtn);
 
