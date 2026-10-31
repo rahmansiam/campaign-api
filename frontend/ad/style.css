@@ -1,3 +1,10 @@
+:root {
+    --ad-bg: #F4F1EA;
+    --ad-primary: #1F2A44;
+    --ad-on-primary: #F4F1EA;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,14 +22,14 @@ body {
     height: 250px;
     width: 300px;
     text-align: center;
-    border: 2px double #3A2318;
+    border: 2px double var(--ad-primary);
     border-radius: 10px;
     padding: 15px;
     position: relative;
     flex-shrink: 0;
     min-width: 300px;
     min-height: 250px;
-    background-color: #AC9362;
+    background-color: var(--ad-bg);
     transition: opacity 0.4s ease-in-out;
 
 }
@@ -36,7 +43,7 @@ body {
     height: 110px;
     width: 200px;
     object-fit: cover;
-    border: 3px double #3A2318;
+    border: 3px double var(--ad-primary);
     border-radius: 10px;
 
 }
@@ -45,10 +52,10 @@ body {
     height: 25px;
     font-size: 1.05rem;
     margin: 5px 5px;
-    background-color: #3A2318;
+    background-color: var(--ad-primary);
     border: 3px double #AC9362;
     border-radius: 5px;
-    color: #AC9362;
+    color: var(--ad-on-primary);
     font-family: Roboto, sans-serif;
     font-weight: bolder;
 
@@ -69,7 +76,7 @@ body {
     opacity: 1;
     font-size: 0.7rem;
     margin-bottom: 5px;
-    color: #3A2318;
+    color: var(--ad-primary);
     font-family: Roboto, sans-serif;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 
@@ -82,11 +89,11 @@ body {
     width: 70px;
     font-size: 0.7rem;
     margin-top: 10px;
-    background-color: #3A2318;
-    color: #AC9362;
+    background-color: var(--ad-primary);
+    color: var(--ad-on-primary);
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    border: 2px double #AC9362;
+    border: 2px double var(--ad-primary);
     border-radius: 5px;
     transition: transform 0.3s ease-in-out;
     animation: ctaAnimation 1s ease 2s 2;
@@ -98,11 +105,11 @@ body {
     width: 50px;
     font-size: 0.4rem;
     margin-top: 10px;
-    background-color: #3A2318;
-    color: #AC9362;
+    background-color: var(--ad-primary);
+    color: var(--ad-on-primary);
     font-family: Roboto, sans-serif;
     font-weight: bold;
-    border: 2px double #AC9362;
+    border: 2px double var(--ad-primary);
     border-radius: 5px;
     padding: 3px;
     position: absolute;
@@ -125,11 +132,11 @@ body {
     position: absolute;
     top: 20px;
     right: 15px;
-    background-color: #3A2318;
-    color: #AC9362;
+    background-color: var(--ad-primary);
+    color: var(--ad-on-primary);
     font-family: Roboto, sans-serif;
     font-weight: bolder;
-    border: 2px double #AC9362;
+    border: 2px double var(--ad-primary);
     border-radius: 5px;
     opacity: 50%;
     transition: all 0.3s ease-in-out;
